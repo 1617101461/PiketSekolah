@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 	<div class="row">
 		<div class="container">
 			<div class="col-md-12">
 				<div class="panel panel-primary">
-			<div class="panel-heading">SMK ASSALAM BANDUNG </div>
 					<div class="panel-heading">Absensi Siswa
 					<div class="panel-title pull-right">
 						<a href="{{route('absensisiswa.index')}}">Kembali</a>
@@ -14,27 +13,37 @@
 						<form action="{{route('absensisiswa.store')}}" method="post">
 							{{csrf_field()}}
 
-					<div class="form-group {{$errors->has('nama') ? 'has-error' : ''}}">
-								<label class="control-label">Nama</label>
-								<input type="text" class="form-control" name="nama" required>
-								@if ($errors->has('nama'))
-									<span class="help-blocks">
-										<strong>{{$errors->first('nama')}}</strong>
-									</span>
-								@endif
-							</div>
+					<div class="form-group {{ $errors->has('id_siswa') ? ' has-error' : '' }}">
+			  					<label class="control-label">Nama Siswa </label>	
+			  					<select name="id_siswa" class="form-control">
+			  					<option>Pilih Siswa</option>
+			  					@foreach($siswas as $data)
+			  						<option value="{{ $data->id }}">{{ $data->nama }}</option>
+			  				@endforeach
+			  			</select>
+			  			@if ($errors->has('id_siswas'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('id_siswas') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+					
 
-
-					<div class="form-group {{$errors->has('kelas') ? 'has-error' : ''}}">
-								<label class="control-label">Kelas</label>
-								<input type="text" class="form-control" name="kelas" required>
-								@if ($errors->has('kelas'))
-									<span class="help-blocks">
-										<strong>{{$errors->first('kelas')}}</strong>
-									</span>
-								@endif
-							</div>
-
+					<div class="form-group {{ $errors->has('id_kelas') ? ' has-error' : '' }}">
+			  					<label class="control-label">Nama Kelas </label>	
+			  					<select name="id_jurusans" class="form-control">
+			  					<option>Pilih Kelas</option>
+			  					@foreach($kelas as $data)
+			  						<option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
+			  				@endforeach
+			  			</select>
+			  			@if ($errors->has('id_kelas'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('id_kelas') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+					
 
 					<div class="form-group {{$errors->has('tanggal') ? 'has-error' : ''}}">
 								<label class="control-label">Tanggal</label>
@@ -57,6 +66,22 @@
 									</span>
 								@endif
 							</div>
+
+					<div class="form-group {{ $errors->has('id_petugaspikets') ? ' has-error' : '' }}">
+			  					<label class="control-label">Nama Petugas </label>	
+			  					<select name="id_petugaspikets" class="form-control">
+			  					<option>Pilih Petugas</option>
+			  					@foreach($petugaspikets as $data)
+			  						<option value="{{ $data->id }}">{{ $data->nama_jurusan }}</option>
+			  				@endforeach
+			  			</select>
+			  			@if ($errors->has('id_petugaspikets'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('id_petugaspikets') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+							
 
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary">Tambah</button>

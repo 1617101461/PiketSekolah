@@ -27,3 +27,9 @@ Route::resource('guru', 'GuruController');
 Route::resource('siswa', 'SiswaController');
 Route::resource('kelas', 'KelasController');
 Route::resource('jurusan', 'JurusanController');
+
+
+Route::get('cek', function () {
+    return view('layouts.admin');
+
+    });

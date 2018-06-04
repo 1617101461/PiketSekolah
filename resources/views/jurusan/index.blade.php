@@ -4,7 +4,6 @@
 		<div class="container">
 			<div class="col-md-12">
 				<div class="panel panel-primary">
-			<div class="panel-heading">SMK ASSALAM BANDUNG </div>
 					<div class="panel-heading">Jurusan
 					<div class="panel-title pull-right">
 						<a href="{{route('jurusan.create')}}">Tambah</a>

@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 	<div class="row">
 		<div class="container">
 			<div class="col-md-12">
 				<div class="panel panel-primary">
-			<div class="panel-heading">SMK ASSALAM BANDUNG </div>
 					<div class="panel-heading">Kelas
 					<div class="panel-title pull-right">
 						<a href="{{route('kelas.create')}}">Tambah</a>
@@ -17,6 +16,7 @@
 									<tr>
 										<th>No</th>
 										<th>Nama Kelas</th>
+										<th>Nama Jurusan</th>
 										<th colspan="2">Action</th>
 									</tr>
 								</thead>
@@ -28,6 +28,7 @@
 									<tr>
 										<td>{{ $no++ }}</td>
 										<td>{{ $data->nama_kelas }}</td>
+										<td><p>{{ $data->jurusan->nama_jurusan }}</p></td>
 										<td>
 											<a class="btn btn-warning" href="{{route('kelas.edit', $data->id)}}">Edit</a>
 										</td>

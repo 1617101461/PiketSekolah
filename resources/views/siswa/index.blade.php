@@ -1,13 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 	<div class="row">
 		<div class="container">
 			<div class="col-md-12">
 				<div class="panel panel-primary">
-			<div class="panel-heading">SMK ASSALAM BANDUNG </div>
 					<div class="panel-heading">Siswa
 					<div class="panel-title pull-right">
-						<a href="{{route('siswa.create')}}">Tambah</a>
+						<a class="btn btn-primary" href="{{route('siswa.create')}}">Tambah</a>
 					</div>
 					</div>
 					<div class="panel-body">
@@ -18,6 +17,7 @@
 										<th>No</th>
 										<th>NIS</th>
 										<th>Nama</th>
+										<th>Kelas</th>
 										<th>Jenis Kelamin</th>
 										<th>Tempat Lahir</th>
 										<th>Tanggal Lahir</th>
@@ -34,6 +34,7 @@
 										<td>{{ $no++ }}</td>
 										<td>{{ $data->nis }}</td>
 										<td>{{ $data->nama }}</td>
+										<td><p>{{ $data->kelas->nama_kelas }}</p></td>
 										<td>{{ $data->jk }}</td>
 										<td>{{ $data->tempat_lahir }}</td>
 										<td>{{ $data->tanggal_lahir }}</td>

@@ -18,6 +18,6 @@ class siswas extends Model
     }
     public function absensisiswa()
     {
-        return $this->hasMany('App\absensisiswa','id_siswas');
+        return $this->hasMany('App\absensisiswas','id_siswas');
     }
 }

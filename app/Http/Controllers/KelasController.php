@@ -73,7 +73,7 @@ class KelasController extends Controller
     {
         $kelas = kelas::findOrFail($id);
         $jurusans = jurusans::all();
-        $selectedjurusan = gurus::findOrFail($id)->id_gurus;
+        $selectedjurusan = jurusans::findOrFail($id)->id_jurusans;
         return view('kelas.edit',compact('jurusans','kelas','selectedjurusan'));
     }
 

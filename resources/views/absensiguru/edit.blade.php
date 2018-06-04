@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
 	<div class="row">
 		<div class="container">
 			<div class="col-md-12">
 				<div class="panel panel-primary">
-			<div class="panel-heading">SMK ASSALAM BANDUNG </div>
 					<div class="panel-heading">Edit Absensi Guru
 					<div class="panel-title pull-right">
 						<a href="{{route('absensiguru.index')}}">Kembali</a>
@@ -48,13 +47,13 @@
 								<label class="control-label">Keterangan</label>
 								<br>
 								<label type="radio-inline"> 
-								<input type="radio" name="keterangan" class="flat" value="izin" {{ $absensigurus->keterangan == 'izin' ? 'checked' : '' }}> izin
+								<input type="radio" name="keterangan" class="flat" value="izin" {{ $absensigurus->keterangan == 'izin' ? 'checked' : '' }}> Izin
 
 								<label type="radio-inline"> 
-								<input type="radio" name="keterangan" class="flat" value="sakit" {{ $absensigurus->keterangan == 'saki' ? 'checked' : '' }}> sakit
+								<input type="radio" name="keterangan" class="flat" value="sakit" {{ $absensigurus->keterangan == 'saki' ? 'checked' : '' }}> Sakit
 
 								<label type="radio-inline"> 
-								<input type="radio" name="keterangan" class="flat" value="alfa" {{ $absensigurus->keterangan == 'alfa' ? 'checked' : '' }}> alfa
+								<input type="radio" name="keterangan" class="flat" value="alfa" {{ $absensigurus->keterangan == 'alfa' ? 'checked' : '' }}> Alfa
 
 							</label>
 								@if ($errors->has('keterangan'))
