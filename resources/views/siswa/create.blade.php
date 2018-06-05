@@ -32,21 +32,22 @@
 									</span>
 								@endif
 							</div>
+		
 
 					<div class="form-group {{ $errors->has('id_kelas') ? ' has-error' : '' }}">
-			  			<label class="control-label">Kelas </label>	
-			  			<select name="id_kelas" class="form-control">
-			  				<option>Pilih Kelas</option>
-			  				@foreach($kelas as $data)
-			  				<option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
-			  				@endforeach
-			  			</select>
-			  			@if ($errors->has('id_kelas'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('id_kelas') }}</strong>
-                            </span>
-                        @endif
-			  		</div>		
+			  					<label class="control-label">Kelas </label>	
+			  					<select name="id_kelas" class="form-control">
+			  					<option>Pilih Kelas</option>
+			  					@foreach($kelas as $data)
+			  						<option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
+			  					@endforeach
+			  					</select>
+			  					@if ($errors->has('id_kelas'))
+                            		<span class="help-block">
+                                		<strong>{{ $errors->first('id_kelas') }}</strong>
+                            		</span>
+                        		@endif
+			  				</div>	
 
 					<div class="form-group {{$errors->has('jk') ? 'has-error' : ''}}">
 								<label class="control-label">Jenis Kelamin</label><br>
@@ -88,7 +89,7 @@
 										<strong>{{$errors->first('alamat')}}</strong>
 									</span>
 								@endif
-							</div>
+							</div>	
 
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary">Tambah</button>

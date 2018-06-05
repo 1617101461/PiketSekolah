@@ -14,7 +14,7 @@ class absensisiswas extends Model
 
     public function siswa()
     {
-        return $this->belongsTo('App\siswa','id_siswas');
+        return $this->belongsTo('App\siswas','id_siswas');
     }
 
     public function kelas()
@@ -24,6 +24,6 @@ class absensisiswas extends Model
 
     public function petugaspiket()
     {
-        return $this->belongsTo('App\petugaspiket','id_petugaspikets');
+        return $this->belongsTo('App\petugaspikets','id_petugaspikets');
     }
 }

@@ -45,18 +45,18 @@ class SiswaController extends Controller
             'tempat_lahir'=>'required|min:2',
             'tanggal_lahir'=>'required|min:2',
             'alamat'=>'required|min:2',
-            'id_kelas'=>'required|min:2',
+            'id_kelas'=>'required|',
         ]);
 
-        $siswa = new siswa;
-        $siswa->nis = $request->nis;
-        $siswa->nama = $request->nama;
-        $siswa->jk = $request->jk;
-        $siswa->tempat_lahir = $request->tempat_lahir;
-        $siswa->tanggal_lahir = $request->tanggal_lahir;
-        $siswa->alamat = $request->alamat;
-        $siswa->id_kelas = $request->id_kelas;
-        $siswa->save();
+        $siswas = new siswas;
+        $siswas->nis = $request->nis;
+        $siswas->nama = $request->nama;
+        $siswas->jk = $request->jk;
+        $siswas->tempat_lahir = $request->tempat_lahir;
+        $siswas->tanggal_lahir = $request->tanggal_lahir;
+        $siswas->alamat = $request->alamat;
+        $siswas->id_kelas = $request->id_kelas;
+        $siswas->save();
         return redirect()->route('siswa.index');
     }
 
@@ -80,10 +80,12 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        $kelas = kelas::findOrFail($id);
-        $jurusans = jurusans::all();
-        $selectedjurusan = jurusans::findOrFail($id)->id_gurus;
-        return view('kelas.edit',compact('jurusans','kelas','selectedjurusan'));   }
+        
+        $siswas = siswas::findOrFail($id);
+        $kelas = kelas::all();
+        $selectedkelas = kelas::findOrFail($id)->id_kelas;
+        return view('absensiguru.edit',compact('siswas','kelas','selectedkelas'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -102,7 +104,7 @@ class SiswaController extends Controller
             'tempat_lahir'=>'required|min:2',
             'tanggal_lahir'=>'required|min:2',
             'alamat'=>'required|min:2',
-            'id_kelas'=>'required|min:2',
+            'id_kelas'=>'required|',
         ]);
 
         $siswas = siswas::findOrFail($id);

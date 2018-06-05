@@ -12,12 +12,14 @@ class siswas extends Model
 
     public $timestamps= true;
 
+
+    public function absensisiswa()
+    {
+        return $this->belongsTo('App\absensisiswas','id_siswas');
+    }
+
     public function kelas()
     {
         return $this->belongsTo('App\kelas','id_kelas');
-    }
-    public function absensisiswa()
-    {
-        return $this->hasMany('App\absensisiswas','id_siswas');
     }
 }

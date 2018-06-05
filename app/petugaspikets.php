@@ -14,6 +14,6 @@ class petugaspikets extends Model
 
      public function absensisiswa()
     {
-        return $this->hasMany('App\absensisiswa','id_petugaspikets');
+        return $this->hasMany('App\absensisiswas','id_petugaspikets');
     }
 }

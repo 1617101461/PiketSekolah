@@ -18,6 +18,7 @@
 										<th>Nama</th>
 										<th>kelas</th>
 										<th>Tanggal</th>
+										<th>Petugas Piket</th>
 										<th>Keterangan</th>
 										<th colspan="2">Action</th>
 									</tr>
@@ -29,9 +30,10 @@
 									@foreach($absensisiswas as $data)
 									<tr>
 										<td>{{ $no++ }}</td>
-										<td>{{ $data->nama }}</td>
-										<td>{{ $data->kelas }}</td>
+										<td><p>{{ $data->absensisiswas->nama }}</p></td>
+										<td><p>{{ $data->absensisiswas->nama_kelas }}</p></td>
 										<td>{{ $data->tanggal }}</td>
+										<td><p>{{ $data->absensisiswas->nama_petugas }}</p></td>
 										<td>{{ $data->keterangan }}</td>
 										<td>
 											<a class="btn btn-warning" href="{{route('absensisiswa.edit', $data->id)}}">Edit</a>

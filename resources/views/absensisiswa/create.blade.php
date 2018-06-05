@@ -15,7 +15,7 @@
 
 					<div class="form-group {{ $errors->has('id_siswa') ? ' has-error' : '' }}">
 			  					<label class="control-label">Nama Siswa </label>	
-			  					<select name="id_siswa" class="form-control">
+			  					<select name="id_siswas" class="form-control">
 			  					<option>Pilih Siswa</option>
 			  					@foreach($siswas as $data)
 			  						<option value="{{ $data->id }}">{{ $data->nama }}</option>
@@ -31,7 +31,7 @@
 
 					<div class="form-group {{ $errors->has('id_kelas') ? ' has-error' : '' }}">
 			  					<label class="control-label">Nama Kelas </label>	
-			  					<select name="id_jurusans" class="form-control">
+			  					<select name="id_kelas" class="form-control">
 			  					<option>Pilih Kelas</option>
 			  					@foreach($kelas as $data)
 			  						<option value="{{ $data->id }}">{{ $data->nama_kelas }}</option>
@@ -72,7 +72,7 @@
 			  					<select name="id_petugaspikets" class="form-control">
 			  					<option>Pilih Petugas</option>
 			  					@foreach($petugaspikets as $data)
-			  						<option value="{{ $data->id }}">{{ $data->nama_jurusan }}</option>
+			  						<option value="{{ $data->id }}">{{ $data->nama_petugas }}</option>
 			  				@endforeach
 			  			</select>
 			  			@if ($errors->has('id_petugaspikets'))

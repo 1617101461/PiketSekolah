@@ -31,5 +31,4 @@ Route::resource('jurusan', 'JurusanController');
 
 Route::get('cek', function () {
     return view('layouts.admin');
-
-    });
+});

@@ -42,19 +42,23 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
-        @include('partials.sidebar')
+        
         <!-- END MENU SIDEBAR-->
 
+        @include('partials.sidebar')
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
-           @include('partials.nav-dekstop')
+           
+        @include('partials.nav-dekstop')
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                @yield('content')
+            @yield('content')
             </div>
+
+        
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
@@ -84,7 +88,7 @@
 
     <!-- Main JS-->
     <script src="/assets/admin/js/main.js"></script>
-    @yield('js')
+@yield('js')
 </body>
 
 </html>

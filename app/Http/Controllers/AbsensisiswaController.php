@@ -16,7 +16,7 @@ class AbsensisiswaController extends Controller
      */
     public function index()
     {
-        $absensisiswas = absensisiswas::with('siswa','petugaspikets','kelas')->get();
+        $absensisiswas = absensisiswas::with('siswas','petugaspikets','kelas')->get();
         return view('absensisiswa.index',compact('absensisiswas'));
     }
 
@@ -42,9 +42,9 @@ class AbsensisiswaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_kelas'=>'required|min:2',
-            'id_siswas'=>'required|min:2',
-            'id_petugaspikets'=>'required|min:2',
+            'id_kelas'=>'required|',
+            'id_siswas'=>'required|',
+            'id_petugaspikets'=>'required|',
             'tanggal'=>'required|min:2',
             'keterangan'=>'required|min:2',
         ]);
